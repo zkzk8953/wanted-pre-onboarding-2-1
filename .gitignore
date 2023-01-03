@@ -25,11 +25,3 @@ yarn-error.log*
 
 # cache
 .eslintcache
-
-# 빈 폴더 커밋을 위한 임시파일
-!/atoms
-!/components
-!/hooks
-!/pages
-!/utils
-.gitkeep
