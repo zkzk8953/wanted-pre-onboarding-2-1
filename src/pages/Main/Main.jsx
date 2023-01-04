@@ -1,12 +1,30 @@
 import styled from "styled-components";
 import Board from "../../components/Board/Board";
 
+const BOARD_LIST = [
+  {
+    title : "Next Up",
+  },
+  {
+    title : "In Progress"
+  },
+  {
+    title : "Completed"
+  }
+];
+
 const Main = () => {
+  const boardList = BOARD_LIST;
+
   return (
     <MainWrap>
-      <Board />
-      <Board />
-      <Board />
+      <MainBoard>
+        {
+          boardList.map(board => (
+            <Board title={board.title} />
+          ))
+        }
+      </MainBoard>
     </MainWrap>
   );
 };
@@ -14,11 +32,19 @@ const Main = () => {
 export default Main;
 
 const MainWrap = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  padding: 20% 30%;
+  position: relative;
+`;
+
+const MainBoard = styled.div`
+  width: 1600px;
+  height: 730px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  background-color: blue;
 `;

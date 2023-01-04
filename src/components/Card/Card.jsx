@@ -1,6 +1,6 @@
 const Card = () => {
     return (
-      <div>boilerplate</div>
+      <div>this is card</div>
     );
   };
   
