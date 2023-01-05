@@ -1,69 +1,51 @@
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { todoListState } from "../../atoms/atom";
 import Card from "../Card/Card";
 
-const CARD_LIST = [
-  {
-    id: 1,
-    title: "제목",
-    task: 0,
-    ended_at: new Date().getDate(),
-    user: "담당자"
-  },
-  {
-    id: 1,
-    title: "제목",
-    task: 0,
-    ended_at: new Date().getDate(),
-    user: "담당자"
-  },
-]
+const Board = ({ title, status }) => {
+  const todoList = useRecoilValue(todoListState);
 
-const Board = ({title}) => {
-    return (
-      <>
-        <BoardWrap>
-          <BoardHeading>{title}</BoardHeading>
-          <BoardContent>
-            {
-              CARD_LIST.map(() => (
-                <Card />
-              ))
-            }
-          </BoardContent>
-        </BoardWrap>
-      </>
-    );
-  };
-  
-  export default Board;
-  
-  const BoardWrap = styled.div`
-    width: 350px;
-    height: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 30px;
-  `;
+  return (
+    <>
+      <BoardWrap>
+        <BoardHeading>{title}</BoardHeading>
+        <BoardContent>
+          {
+            todoList?.map((todo) => (
+              status === todo.status ? <Card key={todo.id} details={todo} /> : null
+            ))
+          }
+        </BoardContent>
+      </BoardWrap>
+    </>
+  );
+};
 
-  const BoardHeading = styled.h1`
-    width: 100%;
-    height: 50px;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 50px;
-    text-align: center;
-    background-color: yellow;
-  `;
+export default Board;
 
-  const BoardContent = styled.div`
-    width: 100%;
-    height: 600px;
-    padding: 30px 20px;
-    overflow: auto;
-    background-color: blue;
-    border-radius: 20px;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
-  `;
+const BoardWrap = styled.div`
+  width: 30%;
+  height: 100%;
+`;
+
+const BoardHeading = styled.h1`
+  width: 100%;
+  height: 80px;
+  font-size: 45px;
+  line-height: 80px;
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
+const BoardContent = styled.div`
+  width: 100%;
+  height: calc(100% - 80px);
+  padding: 30px 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: auto;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+`;
   

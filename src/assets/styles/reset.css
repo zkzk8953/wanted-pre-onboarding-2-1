@@ -1,48 +1,227 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+select,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
+
+html {
+  font-size: 0.5208vw;
+}
+
 body {
-	line-height: 1;
+  line-height: 1;
+  font-size: 16px;
+  color: #222;
 }
-ol, ul {
-	list-style: none;
+
+select,
+textarea {
+  width: 100%;
+  height: 80px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #ccc;
 }
-blockquote, q {
-	quotes: none;
+
+::placeholder {
+  color: #999;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+ol,
+ul {
+  list-style: none;
 }
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  border: none;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+input:disabled {
+  border: 1px solid #ccc;
+  color: #999;
+  background: #f2f2f2;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+select {
+  width: 100%;
+  height: 50px;
+  line-height: 48px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 0 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  font-size: 14px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+@media screen and (max-width: 1080px) {
+  html {
+    font-size: 0.9259vw;
+  }
+
+  select {
+    height: 12rem;
+    line-height: 11.8rem;
+    border-radius: 1rem;
+    padding: 0 4rem;
+    font-size: 3.6rem;
+  }
+
+  input {
+    height: 12rem;
+    border-radius: 1rem;
+    text-indent: 4rem;
+    font-size: 3.6rem;
+  }
+
+  textarea {
+    font-size: 3.8rem;
+  }
 }
